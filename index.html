@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raio-X Limpeza Urbana FRG | ODS 11</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f4f4; color: #333; }
+       .header { background: #1b5e20; color: white; padding: 20px 15px; text-align: center; }
+       .header h1 { font-size: 1.4rem; margin-bottom: 5px; }
+       .ods-badge { background: #ff9800; color: #000; display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-top: 8px; }
+       .form-container { padding: 20px 15px; max-width: 600px; margin: 0 auto; background: white; margin-top: 20px; border-radius: 8px; }
+       .form-container h2 { color: #1b5e20; margin-bottom: 15px; font-size: 1.2rem; }
+       .form-group { margin-bottom: 18px; }
+        label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.95rem; }
+        input, textarea, select { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; }
+        input:focus, textarea:focus, select:focus { border-color: #1b5e20; outline: none; }
+       .btn-enviar { background: #d32f2f; color: white; padding: 14px 20px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-size: 17px; font-weight: bold; }
+       .footer { text-align: center; padding: 20px 15px; font-size: 0.75rem; color: #666; }
+       .contexto { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 12px 15px; margin: 15px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Raio-X da Limpeza Urbana</h1>
+        <p>Pesquisa de Satisfação - Fazenda Rio Grande</p>
+        <div class="ods-badge">ODS 11 - Cidades Sustentáveis | Meta 11.6</div>
+    </div>
+
+    <div class="contexto">
+        <strong>Objetivo:</strong> Coletar a opinião dos moradores sobre limpeza urbana para cruzar com dados de gastos públicos do Portal da Transparência. É um projeto acadêmico da Anhanguera.
+    </div>
+
+    <div class="form-container">
+        <h2>Sua opinião em 1 minuto</h2>
+        <form id="formLimpeza" action="https://formspree.io/f/SEU_CODIGO_AQUI" method="POST">
+            <div class="form-group">
+                <label>1. Seu bairro em Fazenda Rio Grande</label>
+                <input type="text" name="bairro" placeholder="Ex: Eucaliptos, Santa Terezinha" required>
+            </div>
+
+            <div class="form-group">
+                <label>2. Como avalia a coleta de lixo na sua rua?</label>
+                <select name="avaliacao_coleta" required>
+                    <option value="">Selecione</option>
+                    <option value="Otima">Ótima - Passa certinho</option>
+                    <option value="Boa">Boa - Falha 1x no mês</option>
+                    <option value="Regular">Regular - Falha 2-3x no mês</option>
+                    <option value="Ruim">Ruim - Falha toda semana</option>
+                    <option value="Pessima">Péssima - Não passa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>3. Tem pontos de descarte irregular perto de você?</label>
+                <select name="descarte_irregular" required>
+                    <option value="">Selecione</option>
+                    <option value="Nao">Não tem</option>
+                    <option value="Sim_poucos">Sim, mas poucos</option>
+                    <option value="Sim_muitos">Sim, vários pontos</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>4. Comentário livre sobre limpeza no seu bairro</label>
+                <textarea name="comentario" rows="3" placeholder="O que poderia melhorar?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar Resposta</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        Dados para fins acadêmicos - Projeto de Extensão Anhanguera 2027<br>
+        Os resultados serão comparados com dados do Portal da Transparência de FRG
+    </div>
+
+    <script>
+        document.getElementById('formLimpeza').addEventListener('submit', function() {
+            alert('Resposta enviada! Obrigado por ajudar a melhorar Fazenda Rio Grande.');
+        });
+    </script>
+</body>
+</html>
